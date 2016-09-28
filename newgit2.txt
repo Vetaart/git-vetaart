@@ -1,0 +1,15 @@
+$image = imagecreatetruecolor(250, 100);
+		$background_color = imagecolorallocate($image, 255, 255, 255);
+        imagefilledrectangle($image,0,0,250,100,$background_color);
+		$line_color = imagecolorallocate($image, 0, 0, 0);
+		$gr = imagecolorallocate($image, 169, 169, 169);
+		$gr2 = imagecolorallocate($image, 255, 255, 255);
+        for($i=0;$i<10;$i++) {
+			 imagefilledellipse ($image, rand()%50, rand()%100, rand()%100,rand()%150 , $line_color);
+			 imagefilledellipse ($image, rand()%50, rand()%100, rand()%50,rand()%100 , $gr2);
+             imagefilledarc ( $image ,rand()%100 , rand()%150 ,  rand()%200 ,  rand()%250, rand()%20 , rand()%70 , $gr , IMG_ARC_PIE ); 
+			 imagesetthickness($image, 5);
+			imagefilledarc ( $image ,rand()%50 , rand()%50 , rand()%50 , rand()%50 , rand()%20 , rand()%70 , $gr2 ,IMG_ARC_NOFILL);
+			imagepolygon($image, array(rand()%50 ,rand()%50 ,rand()%50 , rand()%50 , rand()%50 ,rand()%50  ), 3, $gr2);
+                             };
+	    $pixel_color = imagecolorallocate($image, 128, 0, 0);
